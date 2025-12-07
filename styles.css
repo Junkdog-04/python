@@ -160,6 +160,8 @@ code {
     code {
       line-height: 1.4;
       font-size: .65rem;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
 
 
