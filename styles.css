@@ -152,6 +152,12 @@ code {
   #menu-toggle:checked+.menu-btn+ul {
     transform: translateX(0);
   }
+
+   pre {
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem 0.5rem;
+   }
 }
 
 main {
@@ -165,13 +171,6 @@ section {
   padding-bottom: 2rem;
   border-bottom: 1px dashed rgba(0, 189, 145, 0.2);
 }
-
-pre {
-  padding: 1rem;
-  border-radius: 12px;
-  margin: 1rem 0.5rem;
-}
-
 
 footer {
   text-align: center;
