@@ -110,6 +110,23 @@ nav ul li a:hover {
   padding: 0.3rem;
 }
 
+pre {
+  background: #00BD91;
+  color: #000814;
+  padding: 1.2rem;
+  border-radius: 14px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  line-height: 1.6;
+}
+
+code {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-weight: 600;
+  white-space: pre-wrap;
+}
+
 @media (max-width: 768px) {
   .menu-btn {
     display: block;
@@ -149,18 +166,10 @@ section {
   border-bottom: 1px dashed rgba(0, 189, 145, 0.2);
 }
 
-code {
-  white-space: pre-wrap;
-  word-break: break-word;
-  display: block;
-  background: #00BD91;
-  color: #000814;
+pre {
   padding: 1rem;
   border-radius: 12px;
-  margin: 1.5rem 0;
-  overflow-x: auto;
-  font-weight: 600;
-  line-height: 1.5;
+  margin: 1rem 0.5rem;
 }
 
 
