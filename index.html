@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header>
     <nav>
-      <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">Python</a>
+      <a href="https://docs.python.org/3/" target="_blank" rel="noopenernoreferrer">Python</a>
 
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-btn">☰</label>
@@ -20,267 +22,174 @@
       </ul>
     </nav>
   </header>
+
   <main>
     <section class="hero">
       <h1>WELCOME TO PYTHON</h1>
     </section>
+
     <section class="zen" id="zen">
       <h2>ZEN Of Python</h2>
       <p>If you wanna know about the core of Python, write in a new file of python <i>import this</i></p>
-      <p>When you excecute this library you can view the rules to became python a language special. You can view this below:</p>
+      <p>When you excecute this library you can view the rules to became python a language special. You can view this
+        below:</p>
 
-      <pre>
-        <code>
-                The Zen of Python, by Tim Peters
-                1.Beautiful is better than ugly.
-                2.Explicit is better than implicit.
-                3.Simple is better than complex.
-                4.Complex is better than complicated.
-                5.Flat is better than nested.
-                6.Sparse is better than dense.
-                7.Readability counts.
-                8.Special cases aren't special enough to break the rules.
-                9.Although practicality beats purity.
-                10.Errors should never pass silently.
-                11.Unless explicitly silenced.
-                12.In the face of ambiguity, refuse the temptation to guess.
-                13.There should be one-- and preferably only one --obvious way to do it.
-                14.Although that way may not be obvious at first unless you're Dutch.
-                15.Now is better than never.
-                16.Although never is often better than *right* now.
-                17.If the implementation is hard to explain, it's a bad idea.
-                18.If the implementation is easy to explain, it may be a good idea.
-                19.Namespaces are one honking great idea -- let's do more of those!
-              </code>
-      </pre>
+      <pre><code>
+The Zen of Python, by Tim Peters
+1. Beautiful is better than ugly.
+2. Explicit is better than implicit.
+3. Simple is better than complex.
+4. Complex is better than complicated.
+5. Flat is better than nested.
+6. Sparse is better than dense.
+7. Readability counts.
+8. Special cases aren't special enough to break the rules.
+9. Although practicality beats purity.
+10. Errors should never pass silently.
+11. Unless explicitly silenced.
+12. In the face of ambiguity, refuse the temptation to guess.
+13. There should be one-- and preferably only one --obvious way to do it.
+14. Although that way may not be obvious at first unless you're Dutch.
+15. Now is better than never.
+16. Although never is often better than right now.
+17. If the implementation is hard to explain, it's a bad idea.
+18. If the implementation is easy to explain, it may be a good idea.
+19. Namespaces are one honking great idea -- let's do more of those!
+</code></pre>
     </section>
 
-      <section class="basics" id="conversation">
-        <h2>Python Basics — A Friendly Conversation</h2>
+    <section class="basics" id="conversation">
+      <h2>Python Basics — A Friendly Conversation</h2>
 
-        <p><strong>Alex:</strong> Hey man, I just opened Python... what’s the first thing I should know?</p>
+      <p><strong>Alex:</strong> Hey man, I just opened Python... what’s the first thing I should know?</p>
 
-        <p><strong>Jordan:</strong> Easy. Think of variables as boxes. You put stuff inside them. Numbers, text, whatever.</p>
+      <p><strong>Jordan:</strong> Easy. Think of variables as boxes. You put stuff inside them. Numbers, text, whatever.
+      </p>
 
-        <pre>
-          <code>
-            name = "Alex" #This is a string
-            age = 22 #This is number integer
-            is_cool = True #This is a boolean
-          </code>
-        </pre>
+      <pre><code>
+name = "Alex"  # This is a string
+age = 22       # This is number integer
+is_cool = True # This is a boolean
+</code></pre>
 
-        <p><strong>Alex:</strong> Oh, like labeling containers in my house?</p>
-        <p><strong>Jordan:</strong> Exactly. Your brain got it before I finished the sentence.</p>
+      <p><strong>Alex:</strong> Oh, like labeling containers in my house?</p>
+      <p><strong>Jordan:</strong> Exactly. Your brain got it before I finished the sentence.</p>
 
-        <h3>Control Structures</h3>
+      <h3>Control Structures</h3>
 
-        <p><strong>Alex:</strong> And how do I tell Python to make decisions?</p>
+      <p><strong>Alex:</strong> And how do I tell Python to make decisions?</p>
 
-        <p><strong>Jordan:</strong> Same way you decide every day:</p>
+      <p><strong>Jordan:</strong> Same way you decide every day:</p>
 
-       <pre>
-        <code>
-          if age > 18:
-             print("Welcome, adult!")
-          else:
-              print("Sorry, kiddo!")
-        </code>
-       </pre>
+      <pre><code>
+if age > 18:
+    print("Welcome, adult!")
+else:
+    print("Sorry, kiddo!")
+</code></pre>
 
-        <h3>Data Structures</h3>
+      <h3>Data Structures</h3>
 
-        <p><strong>Jordan:</strong> Now imagine you want to store multiple things.
-          Lists are like backpacks. <strong>Dictionaries</strong> are like labeled drawers.</p>
-        <pre>
-          <code>
-             backpack = ["water", "notebook", "pencil"]
-             drawer = {"name": "Alex", "age": 22}
-          </code>
-        </pre>
+      <p><strong>Jordan:</strong> Lists are like backpacks. Dictionaries are like labeled drawers.</p>
 
-        <h3>Working with Numbers</h3>
+      <pre><code>
+backpack = ["water", "notebook", "pencil"]
+drawer = {"name": "Alex", "age": 22}
+</code></pre>
 
-        <p><strong>Alex:</strong> So, what about numbers in Python? Are they complicated?</p>
+      <h3>Working with Numbers</h3>
 
-        <p><strong>Jordan:</strong> Not at all. Python handles numbers like a pro.
-          You’ve got three main types: integers, floats and complex numbers.
-          But honestly, 99% of the time you'll use the first two.
-        </p>
+      <pre><code>
+age = 25          # integer
+height = 1.82     # float
+result = age + 10 # simple math
+</code></pre>
 
-        <pre>
-          <code>
-            age = 25            # integer
-            height = 1.82       # float
-            result = age + 10   # simple math
-          </code>
-        </pre>
-        <p><strong>Alex:</strong> And Python understands math just like me?</p>
-        <p><strong>Jordan:</strong> Hopefully better than you on a Monday morning.</p>
+      <h3>While Loops</h3>
 
+      <pre><code>
+count = 0
+while count < 3:
+    print("Waiting...")
+    count += 1
+</code></pre>
 
-        <h3>While Loops</h3>
+      <h3>For Loops (Searching for something)</h3>
 
-        <p><strong>Alex:</strong> I’ve heard about loops… like repeating stuff?</p>
+      <pre><code>
+products = ["apple", "banana", "pineapple", "grape"]
+search = "app"
+found = []
 
-        <p><strong>Jordan:</strong> Exactly. A <strong>while</strong> loop repeats as long as a condition is true.
-          It’s like checking your phone every minute waiting for a message.</p>
+for item in products:
+    if search.lower() in item.lower():
+        found.append(item)
 
-        <pre>
-          <code>
-            count = 0
-
-             while count < 3:
-               print("Waiting...")
-               count += 1
-          </code>
-        </pre>
-
-        <p><strong>Alex:</strong> So it stops when <strong>count</strong> reaches 3?</p>
-        <p><strong>Jordan:</strong> Yep. When the condition becomes false, the loop ends.</p>
-
-
-        <h3>For Loops (Searching for something)</h3>
-
-        <p><strong>Alex:</strong> And the <strong>for</strong> loop?</p>
-
-        <p><strong>Jordan:</strong> The <strong>for</strong> loop is perfect for going through lists, strings, or any group of
-          items.</p>
-
-        <p><strong>Alex:</strong> Can you give me a real example?</p>
-
-        <p><strong>Jordan:</strong> Sure. Let’s say you want to check if a list of products contains something.
-          Even partial matches. Super useful in real life.</p>
-
-        <pre>
-          <code>
-             products = ["apple", "banana", "pineapple", "grape"]
-             search = "app"
-             found = []
-
-              for item in products:
-                  if search.lower() in item.lower():
-                    found.append(item)
-
-                  if found:
-                      print("Matches found:", found)
-                  else:
-                      print("No matches found.")
-          </code>
-        </pre>
-
-        <p><strong>Alex:</strong> Wait… so if I search “app”, it finds “apple” AND “pineapple”?</p>
-
-        <p><strong>Jordan:</strong> Exactly. That’s partial matching.
-          Python checks if the word <strong>app</strong> exists inside each product name.</p>
-
-        <p><strong>Alex:</strong> Damn, that’s actually useful.</p>
-
-        <p><strong>Jordan:</strong> Welcome to Python, buddy.</p>
-
-      </section>
+if found:
+    print("Matches found:", found)
+else:
+    print("No matches found.")
+</code></pre>
+    </section>
 
     <section class="oop" id="oop">
       <h2>Object-Oriented Programming (OOP)</h2>
 
-      <p><strong>Alex:</strong> Dude… everyone keeps saying “you need to learn <strong>OOP</strong>”.
-        Why? What’s the big deal?</p>
-
-      <p><strong>Jordan:</strong> Relax man. <strong>OOP</strong> is just a way to organize your code like real life.
-        Think about your daily stuff — your phone, your backpack, your cat.
-        Each one is an object with things it “has” and things it “does”.</p>
-
-      <p><strong>Alex:</strong> So Python tries to copy that?</p>
-
-      <p><strong>Jordan:</strong> Exactly. In Python you create your own objects using <strong>classes</strong>.
-        Let me show you something simple…</p>
-
       <h3>A Basic Class</h3>
 
-      <pre>
-        <code>
-              class Player:
-                  def __init__(self, name, health):
-                      self.name = name
-                      self.health = health
+      <pre><code>
+class Player:
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
 
-                  def greet(self):
-                      print(f"Hey, I'm {self.name}!")
+    def greet(self):
+        print(f"Hey, I'm {self.name}!")
 
-              player = Player("Alex", 100)
-              player.greet()
-         </code>
-      </pre>
+player = Player("Alex", 100)
+player.greet()
+</code></pre>
 
+      <h3>Adding Behavior (Methods)</h3>
 
+      <pre><code>
+class Player:
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
 
-      <p><strong>Alex:</strong> Ohh, so <strong>__init__</strong> is like the birth moment of the object?</p>
+    def take_damage(self, amount):
+        self.health -= amount
+        print(f"{self.name} took {amount} damage! Health is now {self.health}.")
+</code></pre>
 
-      <p><strong>Jordan:</strong> Yup. Baby Player is born with a name and health.</p>
+      <h3>Now let's add a Simple Algorithm</h3>
 
+      <pre><code>
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.inventory = ["sword", "shield", "apple", "potion"]
 
-      <h3>Adding Behavior <strong>(Methods)</strong></h3>
+    def has_item(self, item):
+        # Simple search algorithm (linear search)
+        for obj in self.inventory:
+            if obj == item:
+                return True
+        return False
 
-      <p><strong>Jordan:</strong> Let’s give the player an action.
-        Like taking damage — everyday stuff, right?</p>
+player = Player("Alex")
 
-      <pre>
-        <code>
-              class Player:
-                  def __init__(self, name, health):
-                      self.name = name
-                      self.health = health
-
-                  def take_damage(self, amount):
-                      self.health -= amount
-                      print(f"{self.name} took {amount} damage! Health is now {self.health}.")
-              </code>
-      </pre>
-
-      <p><strong>Alex:</strong> Nice, now it feels like a game character.</p>
-
-
-
-      <h3>Now let’s add a Simple <strong>Algorithm</strong></h3>
-
-      <p><strong>Alex:</strong> And… <strong>algorithms</strong>? Can we mix one in there?</p>
-
-      <p><strong>Jordan:</strong> Sure. Let’s say the player has an inventory and
-        we want to check if an item exists. That's just a simple search <strong>algorithm</strong>.</p>
-
-     <pre>
-      <code>
-            class Player:
-                def __init__(self, name):
-                    self.name = name
-                    self.inventory = ["sword", "shield", "apple", "potion"]
-
-                def has_item(self, item):
-                    # Simple search algorithm (linear search)
-                    for obj in self.inventory:
-                        if obj == item:
-                            return True
-                    return False
-
-            player = Player("Alex")
-
-            print(player.has_item("apple"))   # True
-            print(player.has_item("banana"))  # False (sad fruit noises)
-        </code>
-     </pre>
-
-      <p><strong>Alex:</strong> So that loop checking items one by one… that’s an <strong>algorithm</strong>?</p>
-
-      <p><strong>Jordan:</strong> Yep. The simplest one.
-        Also, 80% of beginners' LeetCode solutions start exactly like this.</p>
-
-      <p><strong>Alex:</strong> Bro… I feel powerful.</p>
-
-      <p><strong>Jordan:</strong> Congratulations, you now officially understand <strong>OOP and Algorithms</strong>.
-        Your ancestors are proud.</p>
+print(player.has_item("apple"))   # True
+print(player.has_item("banana"))  # False
+</code></pre>
 
     </section>
   </main>
-  <footer>Design by <a href="https://github.com/Junkdog-04" target="_blank" rel="noopener noreferrer">Jorge Rosales</a></footer>
+
+  <footer>
+    Design by <a href="https://github.com/Junkdog-04" target="_blank" rel="noopener noreferrer">Jorge Rosales</a>
+  </footer>
 </body>
+
 </html>
