@@ -116,14 +116,13 @@ pre {
   padding: 1.2rem;
   border-radius: 14px;
   overflow-x: auto;
-  margin: 1.5rem 0;
-  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  margin: 1.2rem 0;
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
 code {
   font-family: "JetBrains Mono", Consolas, monospace;
-  font-weight: 600;
   white-space: pre-wrap;
 }
 
