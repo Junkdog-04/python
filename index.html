@@ -62,11 +62,13 @@
 
         <p><strong>Jordan:</strong> Easy. Think of variables as boxes. You put stuff inside them. Numbers, text, whatever.</p>
 
-        <code>
-      name = "Alex"
-      age = 22
-      is_cool = True
-        </code>
+        <pre>
+          <code>
+            name = "Alex" #This is a string
+            age = 22 #This is number integer
+            is_cool = True #This is a boolean
+          </code>
+        </pre>
 
         <p><strong>Alex:</strong> Oh, like labeling containers in my house?</p>
         <p><strong>Jordan:</strong> Exactly. Your brain got it before I finished the sentence.</p>
@@ -88,10 +90,12 @@
 
         <p><strong>Jordan:</strong> Now imagine you want to store multiple things.
           Lists are like backpacks. <strong>Dictionaries</strong> are like labeled drawers.</p>
-        <code>
-      backpack = ["water", "notebook", "pencil"]
-      drawer = {"name": "Alex", "age": 22}
-        </code>
+        <pre>
+          <code>
+             backpack = ["water", "notebook", "pencil"]
+             drawer = {"name": "Alex", "age": 22}
+          </code>
+        </pre>
 
         <h3>Working with Numbers</h3>
 
@@ -99,14 +103,16 @@
 
         <p><strong>Jordan:</strong> Not at all. Python handles numbers like a pro.
           You’ve got three main types: integers, floats and complex numbers.
-          But honestly, 99% of the time you'll use the first two.</p>
+          But honestly, 99% of the time you'll use the first two.
+        </p>
 
-        <code>
-        age = 25            # integer
-        height = 1.82       # float
-        result = age + 10   # simple math
-        </code>
-
+        <pre>
+          <code>
+            age = 25            # integer
+            height = 1.82       # float
+            result = age + 10   # simple math
+          </code>
+        </pre>
         <p><strong>Alex:</strong> And Python understands math just like me?</p>
         <p><strong>Jordan:</strong> Hopefully better than you on a Monday morning.</p>
 
@@ -118,13 +124,15 @@
         <p><strong>Jordan:</strong> Exactly. A <strong>while</strong> loop repeats as long as a condition is true.
           It’s like checking your phone every minute waiting for a message.</p>
 
-        <code>
-        count = 0
+        <pre>
+          <code>
+            count = 0
 
-        while count < 3:
-            print("Waiting...")
-            count += 1
-        </code>
+             while count < 3:
+               print("Waiting...")
+               count += 1
+          </code>
+        </pre>
 
         <p><strong>Alex:</strong> So it stops when <strong>count</strong> reaches 3?</p>
         <p><strong>Jordan:</strong> Yep. When the condition becomes false, the loop ends.</p>
@@ -142,20 +150,22 @@
         <p><strong>Jordan:</strong> Sure. Let’s say you want to check if a list of products contains something.
           Even partial matches. Super useful in real life.</p>
 
-        <code>
-        products = ["apple", "banana", "pineapple", "grape"]
-        search = "app"
-        found = []
+        <pre>
+          <code>
+             products = ["apple", "banana", "pineapple", "grape"]
+             search = "app"
+             found = []
 
-        for item in products:
-            if search.lower() in item.lower():
-                found.append(item)
+              for item in products:
+                  if search.lower() in item.lower():
+                    found.append(item)
 
-        if found:
-            print("Matches found:", found)
-        else:
-            print("No matches found.")
-        </code>
+                  if found:
+                      print("Matches found:", found)
+                  else:
+                      print("No matches found.")
+          </code>
+        </pre>
 
         <p><strong>Alex:</strong> Wait… so if I search “app”, it finds “apple” AND “pineapple”?</p>
 
@@ -185,18 +195,22 @@
 
       <h3>A Basic Class</h3>
 
-      <code>
-      class Player:
-          def __init__(self, name, health):
-              self.name = name
-              self.health = health
+      <pre>
+        <code>
+              class Player:
+                  def __init__(self, name, health):
+                      self.name = name
+                      self.health = health
 
-          def greet(self):
-              print(f"Hey, I'm {self.name}!")
+                  def greet(self):
+                      print(f"Hey, I'm {self.name}!")
 
-      player = Player("Alex", 100)
-      player.greet()
-      </code>
+              player = Player("Alex", 100)
+              player.greet()
+         </code>
+      </pre>
+
+
 
       <p><strong>Alex:</strong> Ohh, so <strong>__init__</strong> is like the birth moment of the object?</p>
 
@@ -208,16 +222,18 @@
       <p><strong>Jordan:</strong> Let’s give the player an action.
         Like taking damage — everyday stuff, right?</p>
 
-      <code>
-      class Player:
-          def __init__(self, name, health):
-              self.name = name
-              self.health = health
+      <pre>
+        <code>
+              class Player:
+                  def __init__(self, name, health):
+                      self.name = name
+                      self.health = health
 
-          def take_damage(self, amount):
-              self.health -= amount
-              print(f"{self.name} took {amount} damage! Health is now {self.health}.")
-      </code>
+                  def take_damage(self, amount):
+                      self.health -= amount
+                      print(f"{self.name} took {amount} damage! Health is now {self.health}.")
+              </code>
+      </pre>
 
       <p><strong>Alex:</strong> Nice, now it feels like a game character.</p>
 
@@ -230,24 +246,26 @@
       <p><strong>Jordan:</strong> Sure. Let’s say the player has an inventory and
         we want to check if an item exists. That's just a simple search <strong>algorithm</strong>.</p>
 
+     <pre>
       <code>
-      class Player:
-          def __init__(self, name):
-              self.name = name
-              self.inventory = ["sword", "shield", "apple", "potion"]
+            class Player:
+                def __init__(self, name):
+                    self.name = name
+                    self.inventory = ["sword", "shield", "apple", "potion"]
 
-          def has_item(self, item):
-              # Simple search algorithm (linear search)
-              for obj in self.inventory:
-                  if obj == item:
-                      return True
-              return False
+                def has_item(self, item):
+                    # Simple search algorithm (linear search)
+                    for obj in self.inventory:
+                        if obj == item:
+                            return True
+                    return False
 
-      player = Player("Alex")
+            player = Player("Alex")
 
-      print(player.has_item("apple"))   # True
-      print(player.has_item("banana"))  # False (sad fruit noises)
-      </code>
+            print(player.has_item("apple"))   # True
+            print(player.has_item("banana"))  # False (sad fruit noises)
+        </code>
+     </pre>
 
       <p><strong>Alex:</strong> So that loop checking items one by one… that’s an <strong>algorithm</strong>?</p>
 
