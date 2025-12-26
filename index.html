@@ -19,6 +19,8 @@
         <li><a href="#zen">ZEN</a></li>
         <li><a href="#conversation">Steep Learning Curve</a></li>
         <li><a href="#oop">OOP</a></li>
+        <li><a href="#algorithms">Algorithms</a></li>
+        <li><a href="#letsuseit">Let's use it</a></li>
       </ul>
     </nav>
   </header>
@@ -248,6 +250,616 @@ print(player.has_item("banana"))  # False (sad fruit noises)
         Your ancestors are proud.</p>
 
     </section>
+
+    <section class="algorithms" id="algorithms">
+      <h2>Algorithms</h2>
+
+      <h3>Sliding Window</h3>
+
+      <p><strong>Jordan:</strong> Alright Alex, this is one of the most important patterns in interviews.</p>
+
+      <p><strong>Alex:</strong> Sliding window? Sounds… fancy.</p>
+
+      <p><strong>Jordan:</strong> It’s not. It’s just a smarter way to loop.
+        Instead of recalculating everything again and again,
+        you <strong>slide</strong> a window across the data.</p>
+
+      <p><strong>When to use it:</strong></p>
+      <ul>
+        <li>Subarrays or substrings</li>
+        <li>Continuous ranges</li>
+        <li>“Longest”, “shortest”, or “maximum” problems</li>
+      </ul>
+
+      <h3>Naive Approach (What NOT to do)</h3>
+
+      <pre><code>numbers = [2, 1, 5, 1, 3, 2]
+    k = 3
+    max_sum = 0
+
+    for i in range(len(numbers) - k + 1):
+        current_sum = 0
+        for j in range(i, i + k):
+            current_sum += numbers[j]
+        max_sum = max(max_sum, current_sum)
+
+    print(max_sum)
+    </code></pre>
+
+      <p><strong>Jordan:</strong> This works, but it’s slow.
+        Two loops = unnecessary pain.</p>
+
+      <h3>Sliding Window Approach</h3>
+
+      <pre><code>numbers = [2, 1, 5, 1, 3, 2]
+    k = 3
+    window_sum = 0
+    max_sum = 0
+
+    for i in range(len(numbers)):
+        window_sum += numbers[i]
+
+        if i >= k - 1:
+            max_sum = max(max_sum, window_sum)
+            window_sum -= numbers[i - (k - 1)]
+
+    print(max_sum)
+    </code></pre>
+
+      <p><strong>Alex:</strong> Ohhh… we don’t start over each time.</p>
+
+      <p><strong>Jordan:</strong> Exactly.
+        Add one element, remove one element.
+        That’s the window sliding.</p>
+
+      <h3>Why Interviewers Love This</h3>
+
+      <ul>
+        <li>Turns O(N²) into O(N)</li>
+        <li>Shows optimization thinking</li>
+        <li>Applies to dozens of problems</li>
+      </ul>
+
+      <p><strong>Jordan:</strong> Master this pattern,
+        and half of LeetCode suddenly stops looking scary.</p>
+
+    <h3>Two Pointers</h3>
+
+    <p><strong>Alex:</strong> What about this “two pointers” thing?</p>
+
+    <p><strong>Jordan:</strong> Simple idea: instead of using one index,
+      you use <strong>two</strong> — usually one at the start and one at the end.</p>
+
+    <p><strong>When to use it:</strong></p>
+    <ul>
+      <li>Sorted arrays</li>
+      <li>Pairs that meet a condition</li>
+      <li>Comparing values from both ends</li>
+    </ul>
+
+    <h3>Example: Pair with Target Sum</h3>
+
+    <pre><code>numbers = [1, 2, 3, 4, 6]
+        target = 6
+
+        left = 0
+        right = len(numbers) - 1
+
+        while left < right:
+            current_sum = numbers[left] + numbers[right]
+
+            if current_sum == target:
+                print(left, right)
+                break
+            elif current_sum < target:
+                left += 1
+            else:
+                right -= 1
+        </code></pre>
+
+    <p><strong>Alex:</strong> So we move the pointers instead of looping twice?</p>
+
+    <p><strong>Jordan:</strong> Exactly.
+      One pass. Clean. Efficient.</p>
+
+      <h3>Fast & Slow Pointers</h3>
+
+      <p><strong>Alex:</strong> Why would I ever use two pointers moving at different speeds?</p>
+
+      <p><strong>Jordan:</strong> To detect cycles.
+        This pattern is famous for linked lists.</p>
+
+      <p><strong>When to use it:</strong></p>
+      <ul>
+        <li>Cycle detection</li>
+        <li>Linked lists</li>
+        <li>Finding middle elements</li>
+      </ul>
+
+      <h3>Example: Detect a Cycle</h3>
+
+      <pre><code>def has_cycle(head):
+          slow = head
+          fast = head
+
+          while fast and fast.next:
+              slow = slow.next
+              fast = fast.next.next
+
+              if slow == fast:
+                  return True
+
+          return False
+      </code></pre>
+
+      <p><strong>Alex:</strong> So if fast catches slow… boom?</p>
+
+      <p><strong>Jordan:</strong> Cycle detected.
+        Classic interview trick.</p>
+
+      <h3>Binary Search</h3>
+
+      <p><strong>Alex:</strong> Everyone talks about binary search. Why is it so important?</p>
+
+      <p><strong>Jordan:</strong> Because it turns searching from slow to insanely fast —
+        but only if the data is <strong>sorted</strong>.</p>
+
+      <p><strong>When to use it:</strong></p>
+      <ul>
+        <li>Sorted arrays</li>
+        <li>Search problems</li>
+        <li>Optimization questions</li>
+      </ul>
+
+      <h3>Classic Binary Search</h3>
+
+      <pre><code>numbers = [1, 3, 5, 7, 9, 11]
+      target = 7
+
+      left = 0
+      right = len(numbers) - 1
+
+      while left <= right:
+          mid = (left + right) // 2
+
+          if numbers[mid] == target:
+              print(mid)
+              break
+          elif numbers[mid] < target:
+              left = mid + 1
+          else:
+              right = mid - 1
+      </code></pre>
+
+      <p><strong>Alex:</strong> So we cut the search space in half every time?</p>
+
+      <p><strong>Jordan:</strong> Exactly.
+        That’s why it’s O(log N).</p>
+
+        <h3>Prefix Sum</h3>
+
+        <p><strong>Alex:</strong> Prefix sum sounds… mathematical.</p>
+
+        <p><strong>Jordan:</strong> It’s just cumulative sums.
+          Pre-calculate once, answer queries fast.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Range sum queries</li>
+          <li>Subarray problems</li>
+          <li>Optimization tasks</li>
+        </ul>
+
+        <h3>Building a Prefix Sum Array</h3>
+
+        <pre><code>numbers = [2, 4, 6, 8, 10]
+        prefix = [0]
+
+        for num in numbers:
+            prefix.append(prefix[-1] + num)
+
+        # Sum from index 1 to 3
+        result = prefix[4] - prefix[1]
+        print(result)
+        </code></pre>
+
+        <p><strong>Alex:</strong> So we trade memory for speed?</p>
+
+        <p><strong>Jordan:</strong> Exactly.
+          That’s algorithmic thinking.</p>
+
+        <h3>Hash Map (Frequency Counter)</h3>
+
+        <p><strong>Alex:</strong> I keep seeing hash maps everywhere. Why are they so important?</p>
+
+        <p><strong>Jordan:</strong> Because they let you store and access data in constant time.
+          Perfect for counting and tracking things.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Counting frequencies</li>
+          <li>Checking duplicates</li>
+          <li>Fast lookups</li>
+        </ul>
+
+        <pre><code>text = "algorithm"
+        frequency = {}
+
+        for char in text:
+            frequency[char] = frequency.get(char, 0) + 1
+
+        print(frequency)
+        </code></pre>
+
+        <p><strong>Alex:</strong> So it’s like a super-fast dictionary?</p>
+
+        <p><strong>Jordan:</strong> Exactly. Python makes this one feel unfair.</p>
+
+        <h3>Stack</h3>
+
+        <p><strong>Alex:</strong> Stack sounds like something piled up.</p>
+
+        <p><strong>Jordan:</strong> That’s literally what it is.
+          Last In, First Out — like browser history.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Undo / redo</li>
+          <li>Parentheses validation</li>
+          <li>Depth-first problems</li>
+        </ul>
+
+        <pre><code>stack = []
+        expression = "()()"
+
+        for char in expression:
+            if char == "(":
+                stack.append(char)
+            else:
+                if not stack:
+                    print("Invalid")
+                    break
+                stack.pop()
+
+        if not stack:
+            print("Valid")
+        </code></pre>
+
+        <p><strong>Alex:</strong> Last in, first out… makes sense.</p>
+
+        <p><strong>Jordan:</strong> Simple, but powerful.</p>
+
+        <h3>Monotonic Stack</h3>
+
+        <p><strong>Alex:</strong> Okay… what’s with this scary name?</p>
+
+        <p><strong>Jordan:</strong> Relax. It’s just a stack that keeps elements
+          in increasing or decreasing order.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Next greater element</li>
+          <li>Previous smaller element</li>
+          <li>Temperature / stock problems</li>
+        </ul>
+
+        <pre><code>temperatures = [73, 74, 75, 71, 69, 72]
+        stack = []
+
+        for i in range(len(temperatures)):
+            while stack and temperatures[i] > temperatures[stack[-1]]:
+                prev = stack.pop()
+                print(f"Day {prev} -> warmer at day {i}")
+            stack.append(i)
+        </code></pre>
+
+        <p><strong>Alex:</strong> Oh… so we’re removing useless values?</p>
+
+        <p><strong>Jordan:</strong> Exactly. That’s the trick.</p>
+
+        <h3>Heap (Priority Queue)</h3>
+
+        <p><strong>Alex:</strong> When would I use a heap?</p>
+
+        <p><strong>Jordan:</strong> Whenever you need the smallest or largest element —
+          fast.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Top K problems</li>
+          <li>Scheduling</li>
+          <li>Streaming data</li>
+        </ul>
+
+        <pre><code>import heapq
+
+        numbers = [5, 1, 8, 3, 2]
+        heapq.heapify(numbers)
+
+        print(heapq.heappop(numbers))  # smallest
+        print(heapq.heappop(numbers))
+        </code></pre>
+
+        <p><strong>Alex:</strong> So it’s not fully sorted, just organized?</p>
+
+        <p><strong>Jordan:</strong> Exactly. Fast access, not full order.</p>
+
+        <h3>Depth First Search (DFS)</h3>
+
+        <p><strong>Alex:</strong> DFS sounds like exploring deep first.</p>
+
+        <p><strong>Jordan:</strong> That’s exactly it.
+          You go as far as possible before backing up.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Trees</li>
+          <li>Graphs</li>
+          <li>Backtracking problems</li>
+        </ul>
+
+        <pre><code>graph = {
+            "A": ["B", "C"],
+            "B": ["D"],
+            "C": [],
+            "D": []
+        }
+
+        def dfs(node):
+            print(node)
+            for neighbor in graph[node]:
+                dfs(neighbor)
+
+        dfs("A")
+        </code></pre>
+
+        <p><strong>Alex:</strong> Recursive by nature?</p>
+
+        <p><strong>Jordan:</strong> Almost always.</p>
+
+        <h3>Breadth First Search (BFS)</h3>
+
+        <p><strong>Alex:</strong> So BFS is the opposite?</p>
+
+        <p><strong>Jordan:</strong> Yep.
+          You explore level by level.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Shortest path</li>
+          <li>Level order traversal</li>
+          <li>Graphs</li>
+        </ul>
+
+        <pre><code>from collections import deque
+
+        queue = deque(["A"])
+        visited = set()
+
+        while queue:
+            node = queue.popleft()
+            if node not in visited:
+                print(node)
+                visited.add(node)
+                queue.extend(graph[node])
+        </code></pre>
+
+        <p><strong>Alex:</strong> This one feels more controlled.</p>
+
+        <p><strong>Jordan:</strong> And that’s why it finds shortest paths.</p>
+
+        <h3>Backtracking</h3>
+
+        <p><strong>Alex:</strong> This one sounds painful.</p>
+
+        <p><strong>Jordan:</strong> It’s just trial and error —
+          but organized.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Permutations</li>
+          <li>Combinations</li>
+          <li>Puzzles</li>
+        </ul>
+
+        <pre><code>def backtrack(path):
+            if len(path) == 3:
+                print(path)
+                return
+
+            for i in range(1, 4):
+                if i not in path:
+                    backtrack(path + [i])
+
+        backtrack([])
+        </code></pre>
+
+        <p><strong>Alex:</strong> Try, fail, undo, repeat.</p>
+
+        <p><strong>Jordan:</strong> Exactly. That’s backtracking.</p>
+
+        <h3>Dynamic Programming (DP)</h3>
+
+        <p><strong>Alex:</strong> Everyone says DP is hard.</p>
+
+        <p><strong>Jordan:</strong> Only if you skip the basics.
+          It’s just caching results.</p>
+
+        <p><strong>When to use it:</strong></p>
+        <ul>
+          <li>Overlapping subproblems</li>
+          <li>Optimization problems</li>
+        </ul>
+
+        <pre><code>memo = {}
+
+        def fib(n):
+            if n <= 1:
+                return n
+            if n not in memo:
+                memo[n] = fib(n - 1) + fib(n - 2)
+            return memo[n]
+
+        print(fib(10))
+        </code></pre>
+
+        <p><strong>Alex:</strong> So DP is recursion + memory?</p>
+
+        <p><strong>Jordan:</strong> That’s the secret.</p>
+    </section>
+
+    <section class="letsuseit" id="letsuseit">
+      <h2>Let's Use It — <a href="http://" target="_blank" rel="noopener noreferrer">A Real World Example</a></h2>
+
+      <p><strong>Alex:</strong> Okay… we learned a ton of algorithms.
+        But when do we actually use all of this together?</p>
+
+      <p><strong>Jordan:</strong> Right now.
+        Let’s simulate something real — an airport system.</p>
+
+      <p><strong>Jordan:</strong> We’ll combine
+        <strong>OOP</strong>, <strong>queues</strong>,
+        <strong>two pointers</strong>, <strong>sliding window</strong>,
+        <strong>binary search</strong>, <strong>BFS</strong> and <strong>DFS</strong>
+        in one flow.
+      </p>
+
+      <h3>The Entry Point — main.py</h3>
+
+      <p><strong>Jordan:</strong> Every Python program starts somewhere.
+        This is our control tower.</p>
+
+      <pre><code>def main():
+        # Create the airport
+        airport = Airport("Mexico City International")
+
+        # Create a flight
+        flight = Flight("MX203", "Buenos Aires", "15:30", "boarding")
+        airport.add_flight(flight)
+    </code></pre>
+
+      <p><strong>Alex:</strong> So the airport manages flights and passengers?</p>
+
+      <p><strong>Jordan:</strong> Exactly. That’s OOP doing its job.</p>
+
+      <h3>Passengers Arrive — Queue in Action</h3>
+
+      <pre><code>passengers = [
+        Customer("Luis", seat_preference="window"),
+        Customer("Ana", seat_preference="aisle", heavy_bag=True),
+        Customer("Pedro", has_passport=False)
+    ]
+
+    for p in passengers:
+        airport.enqueue_passenger(p)
+    </code></pre>
+
+      <p><strong>Alex:</strong> That’s a queue, right?</p>
+
+      <p><strong>Jordan:</strong> Yep.
+        First passenger in, first passenger processed.
+        Just like real life.</p>
+
+      <h3>Processing Passengers</h3>
+
+      <pre><code>while True:
+        passenger = airport.dequeue_passenger()
+        if passenger is None:
+            break
+    </code></pre>
+
+      <p><strong>Jordan:</strong> This loop keeps running until the queue is empty.</p>
+
+      <p><strong>Alex:</strong> No passengers left — simulation ends.</p>
+
+      <h3>Security Check — Simple Rules</h3>
+
+      <pre><code>sec = airport.security_check(passenger)
+    print("Security:", sec)
+
+    if "Cleared" not in sec:
+        continue
+    </code></pre>
+
+      <p><strong>Jordan:</strong> This is pure business logic.
+        No algorithms yet — just conditions.</p>
+
+      <p><strong>Alex:</strong> Passport missing?
+        You’re not flying.</p>
+
+      <h3>Seat Assignment — Two Pointers</h3>
+
+      <pre><code>seat_msg = flight.assign_seat(passenger)
+    print("Seat:", seat_msg)
+    </code></pre>
+
+      <p><strong>Jordan:</strong> Inside this method, we use
+        <strong>Two Pointers</strong>.
+      </p>
+
+      <p><strong>Alex:</strong> One pointer from the front,
+        one from the back… searching fast.</p>
+
+      <h3>Sliding Window — Group Seats</h3>
+
+      <p><strong>Jordan:</strong> If we needed seats together,
+        we’d use a <strong>Sliding Window</strong>
+        to find consecutive free seats.</p>
+
+      <p><strong>Alex:</strong> That’s perfect for families or groups.</p>
+
+      <h3>Binary Search — Fast Seat Lookup</h3>
+
+      <p><strong>Jordan:</strong> If seats were indexed and ordered,
+        <strong>Binary Search</strong> lets us jump instead of scanning.
+      </p>
+
+      <p><strong>Alex:</strong> Divide and conquer — classic.</p>
+
+      <h3>Finding the Gate — BFS</h3>
+
+      <pre><code>found_gate = flight.bfs_nearest_gate("Gate A", "Gate D")
+    print("Gate path exists:", found_gate)
+    </code></pre>
+
+      <p><strong>Jordan:</strong> BFS explores level by level.</p>
+
+      <p><strong>Alex:</strong> That means it finds the shortest path.</p>
+
+      <h3>Exploring All Routes — DFS</h3>
+
+      <p><strong>Jordan:</strong> If we wanted to explore
+        <strong>every possible path</strong> between gates,
+        we’d use DFS.
+      </p>
+
+      <p><strong>Alex:</strong> Go deep, backtrack, repeat.</p>
+
+      <h3>End of the Simulation</h3>
+
+      <pre><code>print("=== END OF SIMULATION ===")
+    </code></pre>
+
+      <p><strong>Alex:</strong> This feels like an actual system now.</p>
+
+      <p><strong>Jordan:</strong> And that’s the point.</p>
+
+      <p><strong>Jordan:</strong> Interviews don’t test algorithms alone —
+        they test if you know <strong>when</strong> and
+        <strong>why</strong> to use them.
+      </p>
+
+      <p><strong>Alex:</strong> So this is LeetCode…
+        but with a brain.</p>
+
+      <p><strong>Jordan:</strong> Exactly. Welcome to real programming.</p>
+
+    </section>
+
+
+
+
+
   </main>
 
   <footer>Design by <a href="https://github.com/Junkdog-04" target="_blank" rel="noopener noreferrer">Jorge Rosales</a>
